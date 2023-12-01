@@ -1,8 +1,8 @@
 package observerPattern;
 
 public interface NewsAgencySubject {
-    void subscribe(Subscriber subscriber);
-    void unsubscribe(Subscriber subscriber);
+    void attach(Subscriber subscriber);
+    void detach(Subscriber subscriber);
 
     void notifySubscribers();
 

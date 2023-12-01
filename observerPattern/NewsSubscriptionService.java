@@ -38,7 +38,7 @@ public class NewsSubscriptionService {
                     String subscribeName = input.nextLine();
 
                     Subscriber newSubscriber = new Subscriber(subscribeName);
-                    agency.subscribe(newSubscriber);
+                    agency.attach(newSubscriber);
                     System.out.println(subscribeName + " subscribed successfully!");
                     break;
                 case 2:
@@ -48,7 +48,7 @@ public class NewsSubscriptionService {
 
                     Subscriber exSubscriber = findSubscriber(agency, unsubscribeName);
                     if(exSubscriber != null){
-                        agency.unsubscribe(exSubscriber);
+                        agency.detach(exSubscriber);
                         System.out.println(unsubscribeName + " unsubscribed successfully!");
                     } else{
                         System.out.println("User not found in the Subscriber list!");

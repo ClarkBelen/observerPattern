@@ -12,12 +12,12 @@ public class NewsAgency implements NewsAgencySubject {
     }
 
     @Override
-    public void subscribe(Subscriber subscriber) {
+    public void attach(Subscriber subscriber) {
         subscriberList.add(subscriber);
     }
 
     @Override
-    public void unsubscribe(Subscriber subscriber) {
+    public void detach(Subscriber subscriber) {
         subscriberList.remove(subscriber);
     }
 
