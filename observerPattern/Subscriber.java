@@ -13,6 +13,6 @@ public class Subscriber implements SubscriberObserver {
 
     @Override
     public void update() {
-        System.out.println("Hi " + subscriberName + "! New breaking news is available today!");
+        System.out.println("\nHi " + subscriberName + "! New breaking news is available today!");
     }
 }

@@ -27,7 +27,7 @@ public class NewsAgency implements NewsAgencySubject {
             for (Subscriber subscriber : subscriberList) {
                 subscriber.update();
                 if(newsHeadline != null){
-                    System.out.println("[Latest news update: " + newsHeadline + "]\n");
+                    System.out.println("[Latest news update: " + newsHeadline + "]");
                 }
             }
         } else {

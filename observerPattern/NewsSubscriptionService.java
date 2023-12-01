@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class NewsSubscriptionService {
     private static Subscriber findSubscriber(NewsAgency newsAgency, String username) {
         for (Subscriber subscriber : newsAgency.getSubscriberList()) {
-            if (subscriber instanceof Subscriber && subscriber.getSubscriberName().equals(username)) {
+            if (subscriber != null && subscriber.getSubscriberName().equals(username)) {
                 return subscriber;
             }
         }
@@ -19,15 +19,17 @@ public class NewsSubscriptionService {
         System.out.println("Welcome to Real-time News Subscription Service System!");
         System.out.println("How can I help you today?");
         while(true){
-            System.out.println("\nOPTIONS" +
-                    "\n1. Register a user who subscribed" +
-                    "\n2. Remove a user who unsubscribed" +
-                    "\n3. Notify subscribers" +
-                    "\n4. Publish new breaking news" +
-                    "\n5. Exit");
+            System.out.println("""
+
+                    OPTIONS
+                    1. Register a user who subscribed
+                    2. Remove a user who unsubscribed
+                    3. Notify subscribers
+                    4. Publish new breaking news
+                    5. Exit""");
 
             System.out.print("\nChoose from 1-5: ");
-            Integer choice = input.nextInt();
+            int choice = input.nextInt();
 
             switch(choice){
                 case 1:
@@ -49,11 +51,11 @@ public class NewsSubscriptionService {
                         agency.unsubscribe(exSubscriber);
                         System.out.println(unsubscribeName + " unsubscribed successfully!");
                     } else{
-                        System.out.println("User not found in the Subscribers list!");
+                        System.out.println("User not found in the Subscriber list!");
                     }
                     break;
                 case 3:
-                    System.out.println("Notifying all subscribers...\n");
+                    System.out.println("Notifying all subscribers...");
                     agency.notifySubscribers();
                     break;
                 case 4:
@@ -62,7 +64,7 @@ public class NewsSubscriptionService {
                     String news = input.nextLine();
 
                     System.out.println("New breaking news has successfully published.");
-                    System.out.println("Notifying all subscribers...\n");
+                    System.out.println("Notifying all subscribers...");
                     agency.publishNews(news);
                     break;
                 case 5:
